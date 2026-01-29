@@ -21,6 +21,31 @@ WORKDIR /app
 # If the package.sjon and package-lock.json files haven't changed, Docker when will use the cached dependencied
 COPY package*.json ./ 
 
+# Sometimes the ownership od the files in the working directory is changed to root
+# and thus the app cannot access the files and throws an errors -> eacces: permission denied 
+# to avoid this, change ownership of the files to the root user 
 
+USER root
+
+# change th ownership od the /app directory to app User 
+# chown -R <user>:<group> <directory>
+# chown command changes the user and/ or group ownership of for given file.
+
+RUN chown -R app:app .
+
+# change the user back to the app
+USER app
+
+# install dependencies 
+RUN npm install
+
+# copy the rest of the files to the working directory
+COPY . .
+
+
+EXPOSE 5173
+
+# command to run the app
+CMD npm run dev 
 
 
