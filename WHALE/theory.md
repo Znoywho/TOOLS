@@ -16,7 +16,7 @@
 
 > [!NOTE]
 > 1. lightweight
-> 2. Standalone
+> 2. Stand alone
 > 3. Executable package
 
 ## Container
@@ -86,8 +86,86 @@ EXPOSE 3000
 > SPECIFIC PORT 
 
 ### ENV
+> [!NOTE]
+> setting of System
 
-- [-] Keep going with video
+### ARG
+> [!NOTE]
+> Arguments
+
+### VOLUME 
+```Dockerfile
+VOLUME ["/data"]
+# Example
+VOLUME /myvol
+```
+> [!NOTE]
+> Create an amount of points
+### CMD 
+```Dockerfile
+CMD ["executable, param1","param2"]
+```
+
+### ENTRYPOINT
+```Dockerfile
+CMD npm run dev
+```
+> [!NOTE]
+> 
+
+| CMD | ENTRYPOINT |
+| :--------------: | :---------------: |
+| Flexible, can be overridden | cannot be overridden |
+| Default executable | Fixed starting point |
+
+
+## TERMINAL
+
+```terminal 
+docker pull [image]
+```
+> [!NOTE]
+> Download specific image
+
+```terminal
+docker run -it [name of image]
+```
+> [!NOTE]
+> run image
+
+```terminal
+docker build -t [name of directory] .
+```
+> [!NOTE]
+> **"-t"** is task 
+
+***TERMINAL***
+![](../assets/docker%20run.png)
+```Dockerfile
+docker images
+```
+![](../assets/list%20all%20images.png)
+
+```Dockerfile
+docker run [name of image]
+```
+![](../assets/run%20file%20.png)
+
+### Open OS 
+```terminal
+docker run -it docker_code sh
+```
+![Open os](../assets/open%20OS.png)
+
+## Docker react
+
+
+
+
+
+
+
+- [x] Keep going with video
 - [-] write down the docker syntax
 - [-] write down again the commandline
 
