@@ -1,3 +1,0 @@
-char_columns|varchar_column|text_column
-hao       |hao|hao
-depzai    |depzai|depzai
